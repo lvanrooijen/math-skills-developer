@@ -1,7 +1,8 @@
 package org.lvr.mathskillsdeveloper;
 
 import javafx.application.Application;
-import javafx.scene.Group;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -15,22 +16,23 @@ public class MainApp extends Application {
 
   @Override
   public void start(Stage stage) throws Exception {
-    // Stage customStage = new Stage();
-    Group root = new Group();
-    Scene scene = new Scene(root, Color.BLACK);
+    try {
+      Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));
+      Scene scene = new Scene(root, 600, 600, Color.HONEYDEW);
+      String css = this.getClass().getResource("/application.css").toExternalForm();
+      scene.getStylesheets().add(css);
 
-    stage.setTitle("Math Skills Developer");
+      stage.setTitle("Math Skills Developer");
 
-    Image icon = new Image("cat.jpg");
-    stage.getIcons().add(icon);
+      Image icon = new Image("cat.jpg");
+      stage.getIcons().add(icon);
 
-    stage.setWidth(420);
-    stage.setHeight(420);
-    stage.setResizable(false);
+      stage.setResizable(false);
 
-    stage.setFullScreen(true);
-
-    stage.setScene(scene);
-    stage.show();
+      stage.setScene(scene);
+      stage.show();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 }

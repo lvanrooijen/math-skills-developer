@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.text.*?>
+<VBox prefHeight="572.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.lvr.mathskillsdeveloper.controllers.LearningModeController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Label fx:id="lessonExplanation" alignment="TOP_LEFT" graphicTextGap="1.0" layoutX="14.0" layoutY="48.0"
+                       prefHeight="490.0" prefWidth="550.0" style="&#10;" textFill="#035105"
+                       wrapText="true">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Button id="checkAnswerBtn" layoutX="574.0" layoutY="455.0" mnemonicParsing="false"
+                        onAction="#checkAnswer" text="Check"/>
+                <Button id="skipAnswerBtn" layoutX="687.0" layoutY="455.0" mnemonicParsing="false"
+                        onAction="#skipQuestion" text="Skip"/>
+                <Button id="nextLevel" layoutX="613.0" layoutY="502.0" mnemonicParsing="false" onAction="#nextLevel"
+                        text="Next Level"/>
+                <Label fx:id="titleBar" layoutX="14.0" layoutY="13.0" prefHeight="27.0" prefWidth="683.0">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="mathProblemLabel" alignment="BOTTOM_CENTER" layoutX="567.0" layoutY="241.0"
+                       prefHeight="153.0" prefWidth="162.0" style="&#10;" textAlignment="CENTER"
+                       textFill="#6a48dc" wrapText="true">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="mathProblemAnswer" layoutX="574.0" layoutY="409.0" onAction="#checkAnswer"/>
+                <Text fx:id="feedbackLabel" fill="#d10a0a" layoutX="574.0" layoutY="450.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="149.5999999999999">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Button fx:id="quitBtn" layoutX="706.0" layoutY="1.0" mnemonicParsing="false" onAction="#quit"
+                        text="Quit"/>
+                <PointLight color="CHARTREUSE" layoutX="623.0" layoutY="154.0" lightOn="true"/>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

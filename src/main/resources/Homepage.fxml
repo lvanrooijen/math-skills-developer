@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.lvr.mathskillsdeveloper.controllers.HomepageController"
+            prefHeight="400.0" prefWidth="600.0">
+
+
+    <VBox fx:id="mainContainer" prefHeight="600.0" prefWidth="600" xmlns="http://javafx.com/javafx/23.0.1"
+          xmlns:fx="http://javafx.com/fxml/1">
+        <Label fx:id="titleLabel" text="Math Skills Developer"/>
+
+        <Text fx:id="descriptionText">
+            Math Skills Developer has 3 modes: a learning mode, practice mode, and challenge mode.
+            The learning mode will give you an explanation and then test if you understand.
+            Practice mode will let you practice challenges without a timer.
+            Challenge mode is with a timer.
+        </Text>
+
+        <HBox fx:id="buttonContainer" prefWidth="600">
+            <Button fx:id="learningModeButton" text="Learning Mode" onAction="#switchToLearningModeScene"/>
+            <Button fx:id="practiceModeButton" text="Practice Mode" onAction="#switchToPracticeModeScene"/>
+            <Button fx:id="challengeModeButton" text="Challenge Mode" onAction="#switchToChallengeModeScene"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
