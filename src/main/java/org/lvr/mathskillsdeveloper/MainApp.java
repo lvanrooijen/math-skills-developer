@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -18,7 +17,7 @@ public class MainApp extends Application {
   public void start(Stage stage) throws Exception {
     try {
       Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));
-      Scene scene = new Scene(root, 600, 600, Color.HONEYDEW);
+      Scene scene = new Scene(root);
       String css = this.getClass().getResource("/application.css").toExternalForm();
       scene.getStylesheets().add(css);
 

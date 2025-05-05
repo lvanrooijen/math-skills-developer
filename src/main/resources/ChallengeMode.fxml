@@ -1,15 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.lvr.mathskillsdeveloper.controllers.ChallengeModeController"
-            prefHeight="400.0" prefWidth="600.0">
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
 
-    <VBox fx:id="mainContainer" prefHeight="600.0" prefWidth="600">
+  This file is available and licensed under the following license:
 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
 
-    </VBox>
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
 
-</AnchorPane>
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox prefHeight="572.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.lvr.mathskillsdeveloper.controllers.LearningModeController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Label fx:id="titleBar" layoutX="14.0" layoutY="13.0" prefHeight="27.0" prefWidth="683.0"
+                       text="We be doing the the testing!" textFill="#414066">
+                    <font>
+                        <Font name="System Bold Italic" size="18.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="quitBtn" layoutX="706.0" layoutY="1.0" mnemonicParsing="false" onAction="#quit"
+                        text="Quit" textFill="#ef5d60">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Button>
+                <VBox layoutX="234.0" layoutY="190.0" prefHeight="150.0" prefWidth="255.0">
+                    <children>
+                        <Label fx:id="mathProblemLabel" alignment="BOTTOM_CENTER" prefHeight="153.0" prefWidth="248.0"
+                               style="&#10;" text="Question" textAlignment="CENTER" textFill="#127475" wrapText="true">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="3.0" top="3.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <Text fx:id="feedbackLabel" fill="#ef5d60" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Feedback" textAlignment="CENTER" wrappingWidth="243.5999999999999">
+                            <font>
+                                <Font name="System Italic" size="14.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="3.0" top="3.0"/>
+                            </VBox.margin>
+                        </Text>
+                        <TextField fx:id="mathProblemAnswer" onAction="#checkAnswer" prefHeight="25.0"
+                                   prefWidth="207.0">
+                            <VBox.margin>
+                                <Insets bottom="3.0" top="3.0"/>
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Italic" size="12.0"/>
+                            </font>
+                        </TextField>
+                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="200.0">
+                            <children>
+                                <Button id="checkAnswerBtn" mnemonicParsing="false" onAction="#checkAnswer" text="Check"
+                                        textFill="#127475">
+                                    <HBox.margin>
+                                        <Insets left="9.0" right="9.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets top="3.0"/>
+                            </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox layoutX="22.0" layoutY="434.0" prefHeight="100.0" prefWidth="200.0"/>
+                <Label fx:id="titleBar" alignment="CENTER" layoutX="14.0" layoutY="50.0" prefHeight="27.0"
+                       prefWidth="683.0" text="Time left: 03:10" textFill="#ef5d60">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Label>
+            </children>
+            <effect>
+                <ColorAdjust/>
+            </effect>
+        </AnchorPane>
+    </children>
+</VBox>
